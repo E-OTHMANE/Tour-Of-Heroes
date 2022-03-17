@@ -1,0 +1,13 @@
+<div *ngIf="hero">
+    <h2>
+        {{ hero.name | uppercase }} Details
+    </h2>
+    <div>
+        <span>Id : </span>{{hero.id}}
+    </div>
+    <div>
+        <label for="hero-name">Hero name : </label>
+        <!--This is what we called banana in the box (two way binding)-->
+        <input id="hero-name" [(ngModel)]="hero.name" placeholder="The Chosen Hero"/>
+    </div>
+</div>
