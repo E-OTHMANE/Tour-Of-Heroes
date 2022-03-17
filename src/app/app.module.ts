@@ -13,8 +13,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
     HeroDetailComponent,
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
+    BrowserModule,FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
