@@ -1,11 +1,13 @@
+
 <h2>
-    "{{hero.name | uppercase}}" Details
+  My Heroes
 </h2>
-<div>
-    <span>id: </span>{{hero.id}}
-</div>
-<div>
-  <label for="name">Hero name: </label>
-  <!--This is what we called banana in the box (two way binding)-->
-  <input id="name" [(ngModel)]="hero.name" placeholder="name">
-</div>
+<ul class="heroes">
+  <li *ngFor="let hr of heroes">
+    <button type="button" [class.selected]="hr === selectedHero" (click)="onSelect(hr)">
+      <span class="badge">{{hr.id}}</span> {{hr.name}}
+    </button>
+  </li>
+</ul>
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
