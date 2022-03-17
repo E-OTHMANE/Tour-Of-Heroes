@@ -1,11 +1,24 @@
+<div *ngIf="selectedHero">
+  <legend>Chosen hero section</legend>
 <h2>
-    "{{hero.name | uppercase}}" Details
+  "{{selectedHero.name}}" Details
 </h2>
 <div>
-    <span>id: </span>{{hero.id}}
+  <span>id: </span>{{selectedHero.id}}
 </div>
 <div>
-  <label for="name">Hero name: </label>
+  <label for="hero-name">Hero name: </label>
   <!--This is what we called banana in the box (two way binding)-->
-  <input id="name" [(ngModel)]="hero.name" placeholder="name">
+  <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="the chosen hero">
 </div>
+</div>
+<h2>
+  My Heroes
+</h2>
+<ul class="heroes">
+  <li *ngFor="let hr of heroes">
+    <button type="button" [class.selected]="hr === selectedHero" (click)="onSelect(hr)">
+      <span class="badge">{{hr.id}}</span> {{hr.name}}
+    </button>
+  </li>
+</ul>
