@@ -21,7 +21,7 @@ export class InMemoryDataService  implements InMemoryDbService{
       { id: 19, name: 'Spider-man' },
       { id: 20, name: 'Ant-man' }
     ];
-    return heroes
+    return {heroes}
 
   }
 
